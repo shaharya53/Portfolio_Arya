@@ -1,0 +1,397 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #141415;
+    --accent-lime: #d0ff71;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+  }
+
+  body {
+    background-color: #141415;
+    color: #ffffff;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::selection {
+    background-color: #d0ff71;
+    color: #000000;
+  }
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(14deg); }
+  40% { transform: rotate(-8deg); }
+  60% { transform: rotate(14deg); }
+  80% { transform: rotate(-4deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes badgeFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(2deg); }
+}
+
+@keyframes limeGlow {
+  0%, 100% { box-shadow: 0 10px 30px rgba(208, 255, 113, 0.35); }
+  50% { box-shadow: 0 14px 45px rgba(208, 255, 113, 0.6); }
+}
+
+.hand-wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: wave 2s infinite ease-in-out;
+}
+
+.floating-badge {
+  animation: badgeFloat 4s ease-in-out infinite, limeGlow 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hand-wave,
+  .floating-badge {
+    animation: none !important;
+  }
+}
+
+/* Fluid CSS Grid Accordion */
+.accordion-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accordion-wrapper.is-open {
+  grid-template-rows: 1fr;
+}
+
+.accordion-body {
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(-4px);
+}
+
+.accordion-wrapper.is-open .accordion-body {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Perspective & 3D Helpers */
+.perspective-1500 {
+  perspective: 1500px;
+}
+
+/* Infinite Moving Marquee for Blog & Showcase Bars */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-scroll {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 32s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-scroll:hover,
+.animate-marquee-scroll:focus-within {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-scroll {
+    animation: none !important;
+  }
+}
+
+.marquee-fade-left {
+  background: linear-gradient(to right, #141415 0%, rgba(20, 20, 21, 0.85) 45%, transparent 100%);
+}
+
+.marquee-fade-right {
+  background: linear-gradient(to left, #141415 0%, rgba(20, 20, 21, 0.85) 45%, transparent 100%);
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #141415;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d0ff71;
+}
+
+/* Hide scrollbar for clean tab browsing */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ========================================================
+   LIGHT THEME OVERRIDES (Clean, modern light mode)
+   All light green (#d0ff71) becomes periwinkle indigo (#5e67e6)
+   ======================================================== */
+html.light body {
+  background-color: #fafafa !important;
+  color: #111111 !important;
+}
+
+html.light ::selection {
+  background-color: #5e67e6 !important;
+  color: #ffffff !important;
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: #f4f4f5;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+}
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #5e67e6 !important;
+}
+
+/* Surface backgrounds */
+html.light .bg-\[\#141415\] {
+  background-color: #fafafa !important;
+}
+html.light .bg-\[\#181819\],
+html.light .bg-\[\#1a1a1c\],
+html.light .bg-\[\#1f1f22\] {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+html.light .bg-\[\#252528\] {
+  background-color: #f4f4f5 !important;
+}
+html.light .bg-\[\#141416\]\/90 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  color: #111111 !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Typography */
+html.light .text-white {
+  color: #111111 !important;
+}
+html.light .text-white\/95,
+html.light .text-white\/90 {
+  color: #18181b !important;
+}
+html.light .text-\[\#b5b5b5\],
+html.light .text-\[\#d4d4d4\],
+html.light .text-\[\#cccccc\],
+html.light .text-\[\#a1a1aa\] {
+  color: #555555 !important;
+}
+
+/* Borders & Dividers */
+html.light .border-white\/10,
+html.light .border-white\/15,
+html.light .border-white\/20 {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+html.light .border-\[\#767676\]\/30,
+html.light .divide-\[\#767676\]\/30 > * + * {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ========================================================
+   LIGHT BLUE ACCENT REPLACEMENTS IN LIGHT THEME (#5e67e6)
+   Replaces all light green (#d0ff71) with vibrant indigo blue
+   ======================================================== */
+
+/* Text & Icons: Rich periwinkle blue #5e67e6 for high contrast & legibility */
+html.light .text-\[\#d0ff71\],
+html.light .group:hover .group-hover\:text-\[\#d0ff71\],
+html.light .hover\:text-\[\#d0ff71\]:hover {
+  color: #5e67e6 !important;
+}
+
+/* Background fills: Vibrant periwinkle blue (#5e67e6) with crisp white text */
+html.light .bg-\[\#d0ff71\] {
+  background-color: #5e67e6 !important;
+  color: #ffffff !important;
+}
+
+html.light .hover\:bg-\[\#d0ff71\]:hover,
+html.light .group:hover .group-hover\:bg-\[\#d0ff71\] {
+  background-color: #4f58d9 !important;
+  color: #ffffff !important;
+}
+
+/* Ensure text and icons inside #5e67e6 background buttons/badges stay white */
+html.light .bg-\[\#d0ff71\] span,
+html.light .bg-\[\#d0ff71\] p,
+html.light .bg-\[\#d0ff71\] svg {
+  color: #ffffff !important;
+}
+
+/* Translucent badge tints */
+html.light .bg-\[\#d0ff71\]\/5 {
+  background-color: rgba(94, 103, 230, 0.08) !important;
+}
+
+html.light .bg-\[\#d0ff71\]\/10 {
+  background-color: rgba(94, 103, 230, 0.14) !important;
+}
+
+html.light .bg-\[\#d0ff71\]\/15 {
+  background-color: rgba(94, 103, 230, 0.18) !important;
+}
+
+html.light .bg-\[\#d0ff71\]\/20 {
+  background-color: rgba(94, 103, 230, 0.22) !important;
+}
+
+/* Borders */
+html.light .border-\[\#d0ff71\],
+html.light .hover\:border-\[\#d0ff71\]:hover,
+html.light .group:hover .group-hover\:border-\[\#d0ff71\] {
+  border-color: #5e67e6 !important;
+}
+
+html.light .border-\[\#d0ff71\]\/20 {
+  border-color: rgba(94, 103, 230, 0.25) !important;
+}
+
+html.light .border-\[\#d0ff71\]\/30 {
+  border-color: rgba(94, 103, 230, 0.35) !important;
+}
+
+html.light .border-\[\#d0ff71\]\/40 {
+  border-color: rgba(94, 103, 230, 0.45) !important;
+}
+
+html.light .border-\[\#d0ff71\]\/50 {
+  border-color: rgba(94, 103, 230, 0.55) !important;
+}
+
+html.light .border-\[\#d0ff71\]\/60 {
+  border-color: rgba(94, 103, 230, 0.65) !important;
+}
+
+/* Secondary greens */
+html.light .bg-\[\#bdf354\],
+html.light .bg-\[\#bbf455\] {
+  background-color: #4f58d9 !important;
+}
+
+html.light .border-\[\#bbf455\] {
+  border-color: #5e67e6 !important;
+}
+
+/* Focus and ring styles */
+html.light .focus\:border-\[\#d0ff71\]:focus {
+  border-color: #5e67e6 !important;
+}
+
+html.light .focus\:ring-\[\#d0ff71\]\/20:focus,
+html.light .ring-\[\#d0ff71\]\/20 {
+  --tw-ring-color: rgba(94, 103, 230, 0.3) !important;
+}
+
+/* Shadows with periwinkle indigo tint */
+html.light .shadow-\[\#d0ff71\]\/20,
+html.light .shadow-\[\#d0ff71\]\/25,
+html.light .shadow-\[\#d0ff71\]\/35,
+html.light .shadow-\[\#d0ff71\]\/45 {
+  --tw-shadow-color: rgba(94, 103, 230, 0.35) !important;
+}
+
+html.light [class*="shadow-\["][class*="208,255,113"],
+html.light [class*="shadow-\["][class*="208\,255\,113"] {
+  box-shadow: 0 10px 30px rgba(94, 103, 230, 0.35) !important;
+}
+
+/* Floating badge and pulse in light mode */
+html.light .floating-badge {
+  animation: badgeFloat 4s ease-in-out infinite, lightBlueGlow 3s ease-in-out infinite !important;
+  background-color: #5e67e6 !important;
+  color: #ffffff !important;
+}
+
+@keyframes lightBlueGlow {
+  0%, 100% { box-shadow: 0 10px 30px rgba(94, 103, 230, 0.4); }
+  50% { box-shadow: 0 14px 45px rgba(94, 103, 230, 0.65); }
+}
+
+/* Dots & Underline highlights */
+html.light .shadow-\[0_0_8px_\#d0ff71\],
+html.light .shadow-\[0_0_12px_\#d0ff71\] {
+  box-shadow: 0 0 10px #5e67e6 !important;
+}
+
+/* Footer in light mode */
+html.light footer {
+  background-color: #5e67e6 !important;
+  color: #ffffff !important;
+}
+html.light footer .text-black,
+html.light footer a,
+html.light footer span,
+html.light footer svg {
+  color: #ffffff !important;
+}
+html.light footer .text-black\/70,
+html.light footer .text-black\/80 {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+html.light footer .border-black\/20 {
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+html.light footer .bg-\[\#141415\] {
+  background-color: #ffffff !important;
+  color: #5e67e6 !important;
+}
+
+/* Contact pill in Header in light mode */
+html.light header .bg-black\/30 {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Marquee edge fade masks in light mode */
+html.light .marquee-fade-left {
+  background: linear-gradient(to right, #fafafa 0%, rgba(250, 250, 250, 0.85) 45%, transparent 100%) !important;
+}
+
+html.light .marquee-fade-right {
+  background: linear-gradient(to left, #fafafa 0%, rgba(250, 250, 250, 0.85) 45%, transparent 100%) !important;
+}
