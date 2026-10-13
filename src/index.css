@@ -236,6 +236,24 @@ html.light .text-\[\#a1a1aa\] {
   color: #555555 !important;
 }
 
+/* Ensure project sticky card text remains bright white in light mode (photo overlay) */
+html.light .project-sticky-card h3,
+html.light .project-sticky-card .font-antonio,
+html.light .project-sticky-card p,
+html.light .project-sticky-card .text-white,
+html.light .project-sticky-card .text-white\/90,
+html.light .project-sticky-card .text-white\/80 {
+  color: #ffffff !important;
+}
+
+html.light .project-sticky-card p {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+html.light .project-sticky-card .bg-black\/50 span {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
 /* Borders & Dividers */
 html.light .border-white\/10,
 html.light .border-white\/15,

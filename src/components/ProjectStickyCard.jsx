@@ -36,10 +36,10 @@ export default function ProjectStickyCard({ project, index }) {
           <span className="inline-block px-4 py-1.5 rounded-full text-xs sm:text-sm font-inter font-semibold tracking-wide mb-3 sm:mb-5 transition-colors duration-300 shadow-md bg-[#d0ff71] text-black shadow-[0_4px_14px_rgba(208,255,113,0.35)]">
             {project.category}
           </span>
-          <h3 className="font-antonio font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] text-white uppercase tracking-tight mb-3 sm:mb-4 max-w-4xl drop-shadow-lg leading-[0.94]">
+          <h3 className="font-antonio font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] text-always-white uppercase tracking-tight mb-3 sm:mb-4 max-w-4xl drop-shadow-lg leading-[0.94]">
             {project.title}
           </h3>
-          <p className="font-inter font-normal text-sm sm:text-base md:text-[17px] text-white/90 max-w-3xl leading-relaxed drop-shadow-sm line-clamp-3 sm:line-clamp-none">
+          <p className="font-inter font-normal text-sm sm:text-base md:text-[17px] text-always-light max-w-3xl leading-relaxed drop-shadow-sm line-clamp-3 sm:line-clamp-none">
             {project.overview}
           </p>
 
@@ -49,7 +49,7 @@ export default function ProjectStickyCard({ project, index }) {
               {project.technologies.slice(0, 4).map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1 rounded-full text-xs font-inter bg-black/50 border border-white/20 text-white/80 backdrop-blur-sm"
+                  className="px-3 py-1 rounded-full text-xs font-inter bg-black/50 border border-white/20 text-always-light backdrop-blur-sm"
                 >
                   {tech}
                 </span>

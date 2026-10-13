@@ -82,7 +82,7 @@ export default function ContactSection() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         {/* Left Column: Full-Cover Portrait Card with floating "Hi" pill */}
         <div className="lg:col-span-5 relative w-full max-w-[440px] mx-auto lg:mx-0 group">
-          <div className="relative aspect-[4/5] rounded-[36px] sm:rounded-[44px] overflow-hidden bg-[#181819] border border-white/10 shadow-2xl flex flex-col justify-end p-6 sm:p-8 text-center transition-all duration-500 hover:border-[#d0ff71]/40">
+          <div className="relative aspect-[4/5] rounded-[36px] sm:rounded-[44px] overflow-hidden bg-[#181819] border border-white/10 shadow-2xl flex flex-col justify-end p-6 sm:p-8 pb-10 sm:pb-14 text-center transition-all duration-500 hover:border-[#d0ff71]/40">
             {/* Full-bleed background image covering the entire card */}
             <img
               src={profileData.avatar || profileData.heroImage}
@@ -91,31 +91,25 @@ export default function ContactSection() {
             />
 
             {/* Gradient overlays: top subtle vignette, bottom dark fade for maximum text contrast */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 via-45% to-transparent pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 via-50% to-transparent pointer-events-none"></div>
             <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-transparent pointer-events-none"></div>
 
-            {/* Card Content anchored at the bottom */}
-            <div className="relative z-10 flex flex-col items-center text-center">
+            {/* Card Content elevated above the floating 'Hi' badge with clearance */}
+            <div className="relative z-10 flex flex-col items-center text-center pl-6 sm:pl-8 pr-2 sm:pr-4">
               <h3 className="font-antonio font-bold text-3xl sm:text-4xl text-always-white uppercase tracking-tight mb-2 drop-shadow-md">
                 {profileData.name}
               </h3>
               <span className="font-inter font-semibold text-xs sm:text-sm text-[#d0ff71] bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#d0ff71]/40 mb-3.5 shadow-lg">
                 {profileData.title}
               </span>
-              <p className="font-inter font-normal text-xs sm:text-sm text-always-light max-w-xs leading-relaxed drop-shadow">
+              <p className="font-inter font-normal text-xs sm:text-sm text-always-light max-w-[260px] sm:max-w-[280px] leading-relaxed drop-shadow">
                 Based in {profileData.location}. Always excited to discuss challenging full-stack engineering problems.
               </p>
             </div>
           </div>
 
           {/* Floating 'Hi' Badge */}
-          <div className="absolute -bottom-8 -left-4 sm:-bottom-10 sm:-left-6 z-20 w-28 h-28 sm:w-36 sm:h-36 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-105 cursor-default select-none bg-[#d0ff71] text-black border-4 border-[#141415] shadow-2xl">
-            <div className="flex flex-col items-center justify-center">
-              <span className="font-antonio font-bold text-3xl sm:text-4xl tracking-tight">
-                Hi
-              </span>
-            </div>
-          </div>
+         
         </div>
 
         {/* Right Column: Heading & Form */}
