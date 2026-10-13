@@ -247,11 +247,6 @@ export default function Home() {
                 className="w-full h-full object-cover object-center"
               />
             </div>
-
-            {/* Floating Waving Hand Badge */}
-            <div className="floating-badge absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-2xl sm:text-3xl shadow-xl z-20 select-none transition-transform hover:scale-105 active:scale-95 will-change-transform bg-[#d0ff71] text-black">
-              <span className="hand-wave inline-block transform-gpu">👋</span>
-            </div>
           </div>
 
           <div className="overflow-hidden">
@@ -546,14 +541,6 @@ export default function Home() {
                 {/* Subtle gradient vignette */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
               </div>
-            </div>
-
-            {/* Floating Waving Hand Badge (Fades out when scrolling) */}
-            <div
-              ref={badgeRef}
-              className="floating-badge absolute -bottom-8 -left-8 w-26 h-26 rounded-full font-inter font-medium text-3xl flex items-center justify-center cursor-pointer select-none z-40 pointer-events-auto transition-transform hover:scale-110 active:scale-95 bg-[#d0ff71] text-black"
-            >
-              <span className="hand-wave">👋</span>
             </div>
           </div>
         </div>
