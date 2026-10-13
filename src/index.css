@@ -208,6 +208,20 @@ html.light .bg-\[\#141416\]\/90 {
 }
 
 /* Typography */
+.text-always-white {
+  color: #ffffff !important;
+}
+.text-always-light {
+  color: #e5e7eb !important;
+}
+
+html.light .text-always-white {
+  color: #ffffff !important;
+}
+html.light .text-always-light {
+  color: #e5e7eb !important;
+}
+
 html.light .text-white {
   color: #111111 !important;
 }

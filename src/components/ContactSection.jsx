@@ -80,32 +80,36 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-24 sm:py-32 px-4 sm:px-6 md:px-8 max-w-[1400px] mx-auto transition-colors duration-300">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        {/* Left Column: Portrait Card with floating "Hi" pill */}
-        <div className="lg:col-span-5 relative w-full max-w-[440px] mx-auto lg:mx-0">
-          <div className="relative aspect-[4/5] rounded-[36px] sm:rounded-[44px] overflow-hidden bg-[#181819] border border-white/10 shadow-2xl flex flex-col items-center justify-center p-8 text-center">
-            {/* Elegant developer avatar representation */}
-            <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-[#d0ff71]/30 flex items-center justify-center bg-[#252528] shadow-2xl mb-6 overflow-hidden">
-              {profileData.avatar ? (
-                <img src={profileData.avatar} alt={profileData.name} className="w-full h-full object-cover" />
-              ) : (
-                <span className="font-antonio font-bold text-5xl sm:text-6xl text-[#d0ff71]">
-                  {profileData.initials}
-                </span>
-              )}
+        {/* Left Column: Full-Cover Portrait Card with floating "Hi" pill */}
+        <div className="lg:col-span-5 relative w-full max-w-[440px] mx-auto lg:mx-0 group">
+          <div className="relative aspect-[4/5] rounded-[36px] sm:rounded-[44px] overflow-hidden bg-[#181819] border border-white/10 shadow-2xl flex flex-col justify-end p-6 sm:p-8 text-center transition-all duration-500 hover:border-[#d0ff71]/40">
+            {/* Full-bleed background image covering the entire card */}
+            <img
+              src={profileData.avatar || profileData.heroImage}
+              alt={profileData.name}
+              className="absolute inset-0 w-full h-full object-cover object-top sm:object-[center_15%] transition-transform duration-700 ease-out group-hover:scale-105"
+            />
+
+            {/* Gradient overlays: top subtle vignette, bottom dark fade for maximum text contrast */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 via-45% to-transparent pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-transparent pointer-events-none"></div>
+
+            {/* Card Content anchored at the bottom */}
+            <div className="relative z-10 flex flex-col items-center text-center">
+              <h3 className="font-antonio font-bold text-3xl sm:text-4xl text-always-white uppercase tracking-tight mb-2 drop-shadow-md">
+                {profileData.name}
+              </h3>
+              <span className="font-inter font-semibold text-xs sm:text-sm text-[#d0ff71] bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#d0ff71]/40 mb-3.5 shadow-lg">
+                {profileData.title}
+              </span>
+              <p className="font-inter font-normal text-xs sm:text-sm text-always-light max-w-xs leading-relaxed drop-shadow">
+                Based in {profileData.location}. Always excited to discuss challenging full-stack engineering problems.
+              </p>
             </div>
-            <h3 className="font-antonio font-bold text-2xl sm:text-3xl text-white uppercase tracking-tight mb-2">
-              {profileData.name}
-            </h3>
-            <span className="font-inter font-medium text-xs sm:text-sm text-[#d0ff71] bg-[#d0ff71]/10 px-4 py-1.5 rounded-full border border-[#d0ff71]/20 mb-4">
-              {profileData.title}
-            </span>
-            <p className="font-inter font-light text-xs sm:text-sm text-[#b5b5b5] max-w-xs leading-relaxed">
-              Based in {profileData.location}. Always excited to discuss challenging full-stack engineering problems.
-            </p>
           </div>
 
           {/* Floating 'Hi' Badge */}
-          <div className="absolute -bottom-8 -left-4 sm:-bottom-10 sm:-left-6 z-20 w-28 h-28 sm:w-36 sm:h-36 rounded-full flex items-center justify-center transition-all duration-300 cursor-default select-none bg-[#d0ff71] text-black border-4 border-[#141415] shadow-2xl">
+          <div className="absolute -bottom-8 -left-4 sm:-bottom-10 sm:-left-6 z-20 w-28 h-28 sm:w-36 sm:h-36 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-105 cursor-default select-none bg-[#d0ff71] text-black border-4 border-[#141415] shadow-2xl">
             <div className="flex flex-col items-center justify-center">
               <span className="font-antonio font-bold text-3xl sm:text-4xl tracking-tight">
                 Hi

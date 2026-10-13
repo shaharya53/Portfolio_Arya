@@ -539,45 +539,45 @@ export default function About() {
           </div>
 
           {/* Right Column: Visual Persona Card with Animated Counter */}
-          <div className="col-span-5 sticky top-32">
-            <div className="relative aspect-[4/5] rounded-[36px] overflow-hidden bg-[#1f1f22] border border-white/10 shadow-2xl flex flex-col items-center justify-center p-8 text-center transition-all duration-300 hover:border-white/20">
-              <div className="w-40 h-40 rounded-full border-4 border-[#d0ff71]/30 flex items-center justify-center bg-[#252528] shadow-2xl mb-6 overflow-hidden">
-                {profileData.avatar ? (
-                  <img src={profileData.avatar} alt={profileData.name} className="w-full h-full object-cover" />
-                ) : (
-                  <span className="font-antonio font-bold text-6xl text-[#d0ff71]">
-                    {profileData.initials}
-                  </span>
-                )}
-              </div>
-              <h3 className="font-antonio font-bold text-3xl text-white uppercase tracking-tight mb-2">
-                {profileData.name}
-              </h3>
-              <span className="font-inter text-xs font-semibold uppercase tracking-widest text-[#d0ff71] bg-[#d0ff71]/10 px-4 py-1.5 rounded-full border border-[#d0ff71]/20 mb-4">
-                {profileData.title}
-              </span>
-              <p className="font-inter font-light text-sm text-[#b5b5b5] max-w-xs leading-relaxed mb-6">
-                Passionate about clean UI/UX, scalable backend APIs, and end-to-end software ownership.
-              </p>
+          <div className="col-span-5 sticky top-32 group">
+            <div className="relative aspect-[4/5] rounded-[36px] overflow-hidden bg-[#1f1f22] border border-white/10 shadow-2xl flex flex-col justify-end p-6 sm:p-8 text-center transition-all duration-300 hover:border-white/20">
+              <img
+                src={profileData.avatar || profileData.heroImage}
+                alt={profileData.name}
+                className="absolute inset-0 w-full h-full object-cover object-top sm:object-[center_15%] transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 via-50% to-transparent pointer-events-none"></div>
 
-              <div className="pt-4 border-t border-white/10 w-full flex justify-around text-xs font-inter text-[#a1a1aa]">
-                <div>
-                  <strong className="block text-white text-base font-antonio">
-                    <CounterStat value={9.55} decimals={2} />
-                  </strong>
-                  <span>SPI Score</span>
-                </div>
-                <div>
-                  <strong className="block text-white text-base font-antonio">
-                    <CounterStat value={6} suffix=" Mos" />
-                  </strong>
-                  <span>Work Exp</span>
-                </div>
-                <div>
-                  <strong className="block text-white text-base font-antonio">
-                    <CounterStat value={3} suffix="+" />
-                  </strong>
-                  <span>Projects</span>
+              <div className="relative z-10 flex flex-col items-center text-center">
+                <h3 className="font-antonio font-bold text-3xl sm:text-4xl text-always-white uppercase tracking-tight mb-2 drop-shadow-md">
+                  {profileData.name}
+                </h3>
+                <span className="font-inter text-xs font-semibold uppercase tracking-widest text-[#d0ff71] bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#d0ff71]/40 mb-3 shadow-lg">
+                  {profileData.title}
+                </span>
+                <p className="font-inter font-light text-xs sm:text-sm text-always-light max-w-xs leading-relaxed mb-4 drop-shadow">
+                  Passionate about clean UI/UX, scalable backend APIs, and end-to-end software ownership.
+                </p>
+
+                <div className="pt-3 border-t border-white/15 w-full flex justify-around text-xs font-inter text-always-light bg-black/45 backdrop-blur-md rounded-2xl py-3 px-2 border border-white/10">
+                  <div>
+                    <strong className="block text-always-white text-base font-antonio">
+                      <CounterStat value={9.55} decimals={2} />
+                    </strong>
+                    <span>SPI Score</span>
+                  </div>
+                  <div>
+                    <strong className="block text-always-white text-base font-antonio">
+                      <CounterStat value={6} suffix=" Mos" />
+                    </strong>
+                    <span>Work Exp</span>
+                  </div>
+                  <div>
+                    <strong className="block text-always-white text-base font-antonio">
+                      <CounterStat value={3} suffix="+" />
+                    </strong>
+                    <span>Projects</span>
+                  </div>
                 </div>
               </div>
             </div>
