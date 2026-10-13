@@ -75,6 +75,7 @@ export const projectsData = [
     featured: true,
     stickyOrder: 2,
     githubUrl: "https://github.com/shaharya53/Barricade_game",
+    liveUrl: "https://barricade-game-git-main-shaharya53s-projects.vercel.app/",
     image: "/images/projects/barricade-main.jpg",
     detailImages: [
       "/images/projects/barricade-problem.jpg",
@@ -265,6 +266,7 @@ export const projectsData = [
     technologies: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "REST API"],
     role: "Full-Stack Developer",
     githubUrl: "https://github.com/shaharya53/Brewtopia",
+    liveUrl: "https://brewtopia-sand.vercel.app",
     featured: false,
     image: "/images/projects/brewtopia-main.jpg",
     detailImages: [

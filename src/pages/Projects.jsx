@@ -14,7 +14,7 @@ export default function Projects() {
   const featuredProjects = projectsData.filter((p) => p.featured);
   const otherProjects = projectsData.filter((p) => !p.featured);
 
-  const categories = ['All', 'Full-Stack', 'Game Dev & Logic', 'Web Applications'];
+  const categories = ['All', 'Live Project', 'Full-Stack', 'Game Dev & Logic', 'Web Applications'];
 
   // Setup GSAP ScrollTrigger card stacking for featured projects
   useEffect(() => {
@@ -23,29 +23,32 @@ export default function Projects() {
     return cleanup;
   }, []);
 
-  const filteredMoreProjects = otherProjects.filter((p) => {
-    if (selectedFilter === 'All') return true;
-    if (selectedFilter === 'Full-Stack') {
-      return (
-        p.category.includes('Full-Stack') ||
-        p.category.includes('E-Commerce')
-      );
-    }
-    if (selectedFilter === 'Game Dev & Logic') {
-      return (
-        p.category.includes('Game') ||
-        p.category.includes('Logic') ||
-        p.category.includes('Analytics')
-      );
-    }
-    if (selectedFilter === 'Web Applications') {
-      return (
-        p.category.includes('Web') ||
-        p.category.includes('Application')
-      );
-    }
-    return true;
-  });
+  const filteredMoreProjects =
+    selectedFilter === 'Live Project'
+      ? projectsData.filter((p) => Boolean(p.liveUrl))
+      : otherProjects.filter((p) => {
+          if (selectedFilter === 'All') return true;
+          if (selectedFilter === 'Full-Stack') {
+            return (
+              p.category.includes('Full-Stack') ||
+              p.category.includes('E-Commerce')
+            );
+          }
+          if (selectedFilter === 'Game Dev & Logic') {
+            return (
+              p.category.includes('Game') ||
+              p.category.includes('Logic') ||
+              p.category.includes('Analytics')
+            );
+          }
+          if (selectedFilter === 'Web Applications') {
+            return (
+              p.category.includes('Web') ||
+              p.category.includes('Application')
+            );
+          }
+          return true;
+        });
 
   return (
     <div className="w-full">

@@ -26,6 +26,22 @@ export default function ProjectStickyCard({ project, index }) {
         {/* Scroll dim overlay controlled by GSAP ScrollTrigger */}
         <div className="card-dim-overlay absolute inset-0 bg-black/70 opacity-0 pointer-events-none transition-opacity duration-200 z-10"></div>
 
+        {/* Floating Top Left Live Project Badge */}
+        {project.liveUrl && (
+          <div className="absolute top-5 left-5 sm:top-10 sm:left-10 z-30 pointer-events-auto">
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-inter font-semibold bg-[#d0ff71] text-black hover:scale-105 active:scale-95 transition-all shadow-lg shadow-[#d0ff71]/30 cursor-pointer"
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-700 animate-pulse"></span>
+              <span>Live Project</span>
+            </a>
+          </div>
+        )}
+
         {/* Floating Top Right Arrow Badge */}
         <div className="absolute top-5 right-5 sm:top-10 sm:right-10 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 ease-out transform opacity-100 sm:opacity-0 sm:scale-75 group-hover:opacity-100 group-hover:scale-100 z-20 bg-[#d0ff71] text-black shadow-[0_12px_30px_rgba(208,255,113,0.45)]">
           <ArrowUpRight className="w-5 h-5 sm:w-7 sm:h-7 stroke-[2.5]" />
