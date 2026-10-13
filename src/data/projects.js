@@ -23,7 +23,7 @@ export const projectsData = [
     role: "Full-Stack Developer & AI Pipeline Architect",
     featured: true,
     stickyOrder: 1,
-    githubUrl: "https://github.com/shaharya53",
+    githubUrl: "https://github.com/shaharya53/CivicFix",
     image: "/images/projects/civicfix-main.jpg",
     detailImages: [
       "/images/projects/civicfix-problem.jpg",
@@ -60,52 +60,51 @@ export const projectsData = [
     ],
   },
   {
-    slug: "real-estate-web-app",
-    title: "FULL-STACK REAL ESTATE PROPERTY PORTAL",
-    category: "Full-Stack Web & Real Estate",
-    tagline: "Scalable Property Listings Platform with Advanced Multi-Factor Filtering",
+    slug: "barricade-game",
+    title: "BARRICADE GAME – STRATEGY BOARD GAME",
+    category: "Game Development & Logic",
+    tagline: "Turn-Based Tactical Strategy Board Game with Custom Movement & Barrier Mechanics",
     overview:
-      "A full-stack property listings platform with advanced multi-parameter filtering for price, location, and property type, featuring secure JWT-based authentication and role management, optimized MongoDB queries, and a fast, SEO-friendly Next.js frontend.",
+      "A digital tactical strategy board game inspired by the classic Barricade (Malefiz) game, engineered with custom board state representation, piece movement validation, dynamic obstacle barrier placement, turn management algorithms, and interactive multiplayer mechanics.",
     year: "2026",
-    duration: "8 weeks",
-    industry: "Real Estate & PropTech",
-    client: "Property Management & Listing Services",
-    technologies: ["React", "Next.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS"],
-    role: "Full-Stack Developer",
+    duration: "5 weeks",
+    industry: "Gaming & Interactive Systems",
+    client: "Personal Engineering Project",
+    technologies: ["Python", "JavaScript", "React", "HTML5 Canvas", "Algorithms", "Game Design"],
+    role: "Game Developer & Algorithm Architect",
     featured: true,
     stickyOrder: 2,
-    githubUrl: "https://github.com/shaharya53",
-    image: "/images/projects/realestate-main.jpg",
+    githubUrl: "https://github.com/shaharya53/Barricade_game",
+    image: "/images/projects/barricade-main.jpg",
     detailImages: [
-      "/images/projects/realestate-problem.jpg",
-      "/images/projects/realestate-solution1.jpg",
-      "/images/projects/realestate-solution2.jpg",
-      "/images/projects/realestate-summary.jpg",
+      "/images/projects/barricade-problem.jpg",
+      "/images/projects/barricade-solution1.jpg",
+      "/images/projects/barricade-solution2.jpg",
+      "/images/projects/barricade-summary.jpg",
     ],
     problem: [
-      "Traditional real estate websites suffer from sluggish database lookups, poor mobile responsiveness, and ineffective filtering options when buyers browse thousands of properties.",
-      "Property owners and agents lack an accessible, secure platform to list residential and commercial units with high-resolution imagery and direct inquiry channels without paying exorbitant broker fees.",
-      "Slow client-rendered single page apps frequently fail SEO indexing, hurting listing visibility on major search engines."
+      "Physical board games like Barricade require physical setup, manual rule policing, and can be cumbersome to manage turns and track legitimate piece movements across intricate multi-path boards.",
+      "Translating tactical barrier placement, blocking strategies, and dice-governed movement pathways into an intuitive digital experience demands precise state validation and collision tracking."
     ],
     solution: [
-      "Developed a modern full-stack web application using Next.js for server-side rendering and search-engine discoverability, coupled with an Express.js REST API backend.",
-      "Engineered advanced multi-criteria query engines supporting compound filters across pricing thresholds, geographic coordinates, bedroom count, and property classifications.",
-      "Implemented secure JWT authentication with role-based access control (Admin, Agent, Buyer) to protect sensitive user contact details and property management operations.",
-      "Optimized MongoDB indexing strategies to achieve sub-100ms response times across large property datasets."
+      "Engineered an algorithmic game engine modeling graph-based board nodes, legal step paths, and barrier occupancy rules.",
+      "Implemented turn-based player state management, dynamic obstacle repositioning upon capture, and automated win condition detection.",
+      "Crafted an interactive, responsive graphical interface allowing players to easily visualize possible moves and execute strategic blocks.",
+      "Structured modular, object-oriented code architecture for easy extension to AI bot opponents and network multiplayer."
     ],
     challenge:
-      "Creating a flexible and performant schema in MongoDB that efficiently indexes complex geospatial location queries and multiple dynamic filtering criteria simultaneously.",
+      "Designing an efficient path traversal and validation algorithm that verifies every possible step combination on branched paths while strictly observing barricade block rules.",
     summary: [
-      "The platform delivered a 3x speed improvement in search results compared to traditional property portals, achieving high Core Web Vitals and rapid page load metrics.",
-      "User inquiries and property engagements increased substantially thanks to clean UI hierarchy and frictionless search filters."
+      "The Barricade game implementation delivers engaging tactical gameplay with zero rule ambiguity and fluid player interactions.",
+      "Full source code and gameplay documentation are open-source and hosted on GitHub."
     ],
     features: [
-      "Dynamic multi-attribute filter matrix (price sliders, property type, locality, bedrooms, amenities)",
-      "Secure JWT-based authentication, password hashing, and role permissions",
-      "Optimized MongoDB compound indexing for high-concurrency property searches",
-      "SEO-friendly server-rendered pages with dynamic Open Graph metadata tags",
-      "Responsive image carousels with lazy loading and optimized aspect ratios",
-      "Direct agent inquiry modal with client-side form validation"
+      "Turn-based multiplayer game loop and turn indicator",
+      "Graph-based board node state management and path validation",
+      "Dynamic barricade placement mechanics to block opponent progress",
+      "Interactive graphical interface with visual indicators for legal moves",
+      "Automated win condition evaluation and score logging",
+      "Clean, modular object-oriented codebase hosted on GitHub"
     ],
   },
   {
@@ -123,7 +122,7 @@ export const projectsData = [
     role: "Backend & AI Engineer",
     featured: true,
     stickyOrder: 3,
-    githubUrl: "https://github.com/shaharya53",
+    githubUrl: "https://github.com/shaharya53/News_Summary_AI/tree/main/news",
     image: "/images/projects/newssummary-main.jpg",
     detailImages: [
       "/images/projects/newssummary-problem.jpg",
@@ -158,50 +157,51 @@ export const projectsData = [
     ],
   },
   {
-    slug: "barricade-game",
-    title: "BARRICADE GAME – STRATEGY BOARD GAME",
-    category: "Game Development & Logic",
-    tagline: "Turn-Based Tactical Strategy Board Game with Custom Movement & Barrier Mechanics",
+    slug: "real-estate-web-app",
+    title: "FULL-STACK REAL ESTATE PROPERTY PORTAL",
+    category: "Full-Stack Web & Real Estate",
+    tagline: "Scalable Property Listings Platform with Advanced Multi-Factor Filtering",
     overview:
-      "A digital tactical strategy board game inspired by the classic Barricade (Malefiz) game, engineered with custom board state representation, piece movement validation, dynamic obstacle barrier placement, turn management algorithms, and interactive multiplayer mechanics.",
+      "A full-stack property listings platform with advanced multi-parameter filtering for price, location, and property type, featuring secure JWT-based authentication and role management, optimized MongoDB queries, and a fast, SEO-friendly Next.js frontend.",
     year: "2026",
-    duration: "5 weeks",
-    industry: "Gaming & Interactive Systems",
-    client: "Personal Engineering Project",
-    technologies: ["Python", "JavaScript", "React", "HTML5 Canvas", "Algorithms", "Game Design"],
-    role: "Game Developer & Algorithm Architect",
-    githubUrl: "https://github.com/shaharya53/Barricade_game",
+    duration: "8 weeks",
+    industry: "Real Estate & PropTech",
+    client: "Property Management & Listing Services",
+    technologies: ["React", "Next.js", "Express.js", "MongoDB", "JWT", "Tailwind CSS"],
+    role: "Full-Stack Developer",
     featured: false,
-    image: "/images/projects/barricade-main.jpg",
+    githubUrl: "https://github.com/shaharya53/Real-Estate",
+    image: "/images/projects/realestate-main.jpg",
     detailImages: [
-      "/images/projects/barricade-problem.jpg",
-      "/images/projects/barricade-solution1.jpg",
-      "/images/projects/barricade-solution2.jpg",
-      "/images/projects/barricade-summary.jpg",
+      "/images/projects/realestate-problem.jpg",
+      "/images/projects/realestate-solution1.jpg",
+      "/images/projects/realestate-solution2.jpg",
+      "/images/projects/realestate-summary.jpg",
     ],
     problem: [
-      "Physical board games like Barricade require physical setup, manual rule policing, and can be cumbersome to manage turns and track legitimate piece movements across intricate multi-path boards.",
-      "Translating tactical barrier placement, blocking strategies, and dice-governed movement pathways into an intuitive digital experience demands precise state validation and collision tracking."
+      "Traditional real estate websites suffer from sluggish database lookups, poor mobile responsiveness, and ineffective filtering options when buyers browse thousands of properties.",
+      "Property owners and agents lack an accessible, secure platform to list residential and commercial units with high-resolution imagery and direct inquiry channels without paying exorbitant broker fees.",
+      "Slow client-rendered single page apps frequently fail SEO indexing, hurting listing visibility on major search engines."
     ],
     solution: [
-      "Engineered an algorithmic game engine modeling graph-based board nodes, legal step paths, and barrier occupancy rules.",
-      "Implemented turn-based player state management, dynamic obstacle repositioning upon capture, and automated win condition detection.",
-      "Crafted an interactive, responsive graphical interface allowing players to easily visualize possible moves and execute strategic blocks.",
-      "Structured modular, object-oriented code architecture for easy extension to AI bot opponents and network multiplayer."
+      "Developed a modern full-stack web application using Next.js for server-side rendering and search-engine discoverability, coupled with an Express.js REST API backend.",
+      "Engineered advanced multi-criteria query engines supporting compound filters across pricing thresholds, geographic coordinates, bedroom count, and property classifications.",
+      "Implemented secure JWT authentication with role-based access control (Admin, Agent, Buyer) to protect sensitive user contact details and property management operations.",
+      "Optimized MongoDB indexing strategies to achieve sub-100ms response times across large property datasets."
     ],
     challenge:
-      "Designing an efficient path traversal and validation algorithm that verifies every possible step combination on branched paths while strictly observing barricade block rules.",
+      "Creating a flexible and performant schema in MongoDB that efficiently indexes complex geospatial location queries and multiple dynamic filtering criteria simultaneously.",
     summary: [
-      "The Barricade game implementation delivers engaging tactical gameplay with zero rule ambiguity and fluid player interactions.",
-      "Full source code and gameplay documentation are open-source and hosted on GitHub."
+      "The platform delivered a 3x speed improvement in search results compared to traditional property portals, achieving high Core Web Vitals and rapid page load metrics.",
+      "User inquiries and property engagements increased substantially thanks to clean UI hierarchy and frictionless search filters."
     ],
     features: [
-      "Turn-based multiplayer game loop and turn indicator",
-      "Graph-based board node state management and path validation",
-      "Dynamic barricade placement mechanics to block opponent progress",
-      "Interactive graphical interface with visual indicators for legal moves",
-      "Automated win condition evaluation and score logging",
-      "Clean, modular object-oriented codebase hosted on GitHub"
+      "Dynamic multi-attribute filter matrix (price sliders, property type, locality, bedrooms, amenities)",
+      "Secure JWT-based authentication, password hashing, and role permissions",
+      "Optimized MongoDB compound indexing for high-concurrency property searches",
+      "SEO-friendly server-rendered pages with dynamic Open Graph metadata tags",
+      "Responsive image carousels with lazy loading and optimized aspect ratios",
+      "Direct agent inquiry modal with client-side form validation"
     ],
   },
   {
